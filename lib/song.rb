@@ -20,7 +20,7 @@ class Song
     @@genres
   end
   def self.artists
-    @@artists
+    if @@artists
   end
   def count
     return @@count 
