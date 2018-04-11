@@ -4,6 +4,7 @@ class Song
   @@genres = []
   @@artists = []
   @@genre_count
+  @@artist_count
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
@@ -27,7 +28,9 @@ class Song
     @@genre_count = Hash[*@@genres.group_by{|x| x }.flat_map{ |y, x| [y, x.size] }]
     @@genre_count
   end
-
+  def self.artist_count
+    @@artist_count = Hash[*@@artists.group_by{ |x| x }.flat_map{ |y, x| [y, x.size] }]
+  end
 end
   
     
