@@ -29,7 +29,8 @@ class Song
     return @@count 
   end
   def genre_count
-    
+    Hash[*@@genres.group_by{ |x| x }.flat_map{ |x, y| [x, y.size] }]
+  end
 
 end
   
