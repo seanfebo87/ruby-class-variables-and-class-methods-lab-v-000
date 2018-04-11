@@ -28,7 +28,8 @@ class Song
   def count
     return @@count 
   end
-  
+  def genre_count
+    inject(Hash.new(0)) {|x, y| x[y] += 1; x}
 
 end
   
