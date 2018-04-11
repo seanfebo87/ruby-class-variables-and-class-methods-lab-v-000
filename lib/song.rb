@@ -11,6 +11,7 @@ class Song
     @@count += 1 
     @@genres << genre 
     @@artists << artist
+    @@genre_count
   end
   
   def self.count
@@ -23,7 +24,7 @@ class Song
     @@genres.uniq
   end
   
-  def genre_count
+  def self.genre_count
     Hash[*@@genres.group_by{ |x| x }.flat_map{ |y, x| [y, x.size] }]
   end
 
